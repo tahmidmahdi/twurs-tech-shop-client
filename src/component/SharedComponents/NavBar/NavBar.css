@@ -1,0 +1,47 @@
+nav{
+    text-align: center;
+    background-color: antiquewhite;
+    height: 60px;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* margin-top: 20px; */
+}
+nav a{
+    padding: 40px;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    
+}
+nav a:hover{
+    color: gray
+}
+nav .dropDown{
+    display: none
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    nav {
+      background-color: lightblue;
+    }
+    nav .dropDown{
+        display: block
+    }
+    nav a {
+        padding: 0px;
+        font-size: 12px;
+        margin: 0px 0px 12px 12px;
+        /* width :100% */
+        align-items: center;
+    }
+
+  }
+  
