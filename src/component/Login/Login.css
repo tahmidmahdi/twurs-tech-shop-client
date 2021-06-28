@@ -1,0 +1,39 @@
+.containers{
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+
+  .google{
+    width: 300px;
+    border-radius: 20px;
+    background-color: #ffc107;
+    height: 40px
+    
+  }
+  .login-home{
+    text-decoration: none;
+    color: black;
+    
+  }
+
+  .input-field{
+      border: 1px solid black;
+      height: 40px;
+      width: 300px;
+  }
+  .input-submit{
+      background-color: #dc3545;
+      height: 40px;
+      width: 300px !important;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+
+  }
+  .input-submit:hover{
+      cursor: pointer;
+  }
+  .containers h1{
+    font-size: 25px
+  }

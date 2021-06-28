@@ -7,15 +7,18 @@ import './NavBar.css';
 const NavBar = () => {
     return (
         <div>
-            <nav>
-                <Link className="active" to="/">Twurs Tech Shop</Link>
+            <nav className="bg-gray-100">
+                <Link className="active text-black" to="/">Twurs Tech Shop</Link>
                 <Link to="/phone">Phone</Link>
                 <Link to="/mouse">Mouse</Link>
                 <Link to="/laptop">Laptop</Link>
                 <Link to="/keyboard">Keyboard</Link>
                 <Link to="/books">Books</Link>
                 <Link to="/coffees">Coffees</Link>
-                <FontAwesomeIcon className="dropDown" icon={faCaretDown} size='2x'/>
+                <Link to="/login">Login</Link>
+                {/* <FontAwesomeIcon className="dropDown" icon={faCaretDown} size='2x' /> */}
+                
+
             </nav>
 
 
