@@ -200,7 +200,8 @@ function App() {
             {/* <img src={logos} alt="" /> */}
             <br /><br />
 
-            <input type="checkbox" onClick={() => setNewUser(!newUser)} name="newUser" id="" />
+            <input className='checkBox' type="checkbox" onClick={() => setNewUser(!newUser)} name="newUser" id="" />
+            
             <label htmlFor="newUser"> Sign Up if you are new</label>
 
             <form onSubmit={handleSubmit} >
@@ -233,7 +234,7 @@ function App() {
             <p><strong>----------------Or----------------</strong></p>
             <button className="google mt-7" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} size="1x" />  {' '} Google Sign In </button>
             <br /> <br />
-            <button className="google " onClick={handleFacebookSignIn}><FontAwesomeIcon icon={faFacebookSquare} size="1x" /> Facebook Sign In</button>
+            <button className="google " onClick={handleFacebookSignIn}><FontAwesomeIcon icon={faFacebookSquare} size="1x" /> {' '} Facebook Sign In</button>
 
             <br/><br/><br/><br/>
            

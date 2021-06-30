@@ -11,7 +11,9 @@ import {
 import Home from './component/Home/Home/Home'
 import Login from './component/Login/Login'
 import NavBar from './component/SharedComponents/NavBar/NavBar';
-
+// import DashBoard from './component/SharedComponents/AdminNavBoard/AdminNavBoard';
+import AdminNavBoard from './component/SharedComponents/AdminNavBoard/AdminNavBoard'
+import AddProducts from './component/Admin/AddProducts/AddProducts';
 
 export const emailContext = createContext()
 
@@ -28,6 +30,13 @@ function App() {
           <Route path='/login'>
             <NavBar></NavBar>
             <Login></Login>
+          </Route>
+          <Route path='/admin'>
+            <AdminNavBoard></AdminNavBoard>
+          </Route>
+          <Route path='/addProduct'>
+            <AdminNavBoard></AdminNavBoard>
+            <AddProducts></AddProducts>
           </Route>
         </Switch>
       </Router>

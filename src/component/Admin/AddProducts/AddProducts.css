@@ -1,0 +1,27 @@
+.input-options{
+    width: 600px;
+    height: 50px;
+    background-color: #e8f0fe;
+    border-radius: 15px;
+    
+}
+.input-options option{
+    font-weight: bold;
+}
+.input-div{
+    text-align: justify !important;
+
+}
+input{
+    border: 1px solid gray;
+    height: 50px;
+    width: 500px;
+    border-radius:15px;
+}
+textarea{
+    /* border: 1px solid gray; */
+    width: 600px;
+    border-radius:15px;
+    background-color: #e8f0fe
+    
+}

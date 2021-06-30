@@ -1,0 +1,20 @@
+.column {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    margin: 45px;
+    height: 500px; /* Should be removed. Only for demonstration */
+    /* text-align: center; */
+    /* border: 1px solid black; */
+    
+  }
+
+  .typewriter span{
+        font-size: 20px;
+        margin-left: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+  }
+  .main-img{
+        height: 400px;
+  }

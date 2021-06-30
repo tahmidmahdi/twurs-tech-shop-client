@@ -8,6 +8,7 @@ const NavBar = () => {
     return (
         <div>
             <nav className="bg-gray-100">
+
                 <Link className="active text-black" to="/">Twurs Tech Shop</Link>
                 <Link to="/phone">Phone</Link>
                 <Link to="/mouse">Mouse</Link>
@@ -16,14 +17,8 @@ const NavBar = () => {
                 <Link to="/books">Books</Link>
                 <Link to="/coffees">Coffees</Link>
                 <Link to="/login">Login</Link>
-                {/* <FontAwesomeIcon className="dropDown" icon={faCaretDown} size='2x' /> */}
-                
 
             </nav>
-
-
-
-
 
         </div>
     );

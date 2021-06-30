@@ -1,0 +1,29 @@
+.image-logo img{
+    /* margin:0px 750px;
+    top: -50px;
+    height: 380px */
+    /* margin: auto;
+    width: 50%; */
+    /* border: 3px solid green; */
+    /* padding: 10px;
+    text-align: center; */
+    /* height: 380px  */
+
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    top: -40px;
+    
+    
+    
+}
+
+.banner-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    
+}

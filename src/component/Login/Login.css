@@ -37,3 +37,9 @@
   .containers h1{
     font-size: 25px
   }
+  .checkBox{
+    height: 20px;
+    /* margin: 0px; */
+    width: 15px !important;
+    margin-top: 0px !important
+  }
