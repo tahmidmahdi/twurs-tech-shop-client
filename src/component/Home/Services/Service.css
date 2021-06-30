@@ -1,3 +1,30 @@
 .service-h1{
     font-family: 'Dancing Script', cursive;
 }
+.service{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+     
+}
+.service div{
+    /* border: 1px solid black; */
+    width: 300px;
+    text-align: center;
+}
+.service img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.service-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 80px
+}
