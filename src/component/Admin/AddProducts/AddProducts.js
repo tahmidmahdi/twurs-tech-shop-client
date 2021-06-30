@@ -189,7 +189,7 @@ const AddProducts = () => {
 
 
 
-                    {category != 'Books' && <>
+                    {category !== 'Books' && <>
                         <label htmlFor="name">Enter Product Brand Name</label>
                         <br />
                         <input {...register("name", { required: true })} />
