@@ -8,7 +8,7 @@ import { emailContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import firebaseConfig from './firabase.config';
 // import logos from '../../logos/Group 1329.png'
 

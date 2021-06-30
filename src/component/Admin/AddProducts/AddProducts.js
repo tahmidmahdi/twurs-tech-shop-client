@@ -5,20 +5,20 @@ import { useState } from 'react';
 import './AddProducts.css'
 const AddProducts = () => {
 
-    const [options, setOptions] = useState({
-        ram: null,
-        rom: null,
-        isSSD: null,
-        isSugar: false,
+    // const [options, setOptions] = useState({
+    //     ram: null,
+    //     rom: null,
+    //     isSSD: null,
+    //     isSugar: false,
 
-    })
+    // })
 
 
 
 
     const [axiosLink, setAxiosLink] = useState(null)
     var url = null;
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
         const newData = { ...data }
