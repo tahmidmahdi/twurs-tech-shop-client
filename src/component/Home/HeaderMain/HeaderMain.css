@@ -18,3 +18,15 @@
   .main-img{
         height: 400px;
   }
+  .button{
+        height: 50px;
+        width: 300px;
+        border-radius: 15px;
+        color: white;
+        font-weight: bold;
+        background-color: #96bf47;
+        letter-spacing:1px;
+  }
+  .button:hover{
+        background-color:#5f615c 
+  }

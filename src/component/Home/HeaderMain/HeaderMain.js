@@ -19,11 +19,13 @@ const HeaderMain = () => {
                             loop: true,
                         }}
                     />
+
+                    <button className="mt-12 ml-5 bg-green-500 button">Start Shopping Today</button>
                </div>
 
             </div>
             <div className="column">
-                <img className="main-img" src={img} alt="" />
+                <img  className="main-img" src={img} alt="" />
             </div>
         </div>
     );
