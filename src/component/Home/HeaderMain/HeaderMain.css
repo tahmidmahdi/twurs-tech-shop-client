@@ -30,3 +30,26 @@
   .button:hover{
         background-color:#5f615c 
   }
+
+  @media only screen and (max-width: 600px) {
+      .column h1 {
+         width: 400px;
+         /* background-color: cyan; */
+      }
+      .column p {
+          width: 300px;
+          
+      }
+
+      .main-img{
+            height: 250px;
+            /* width: 500px */
+            border: 1px solid black;
+            margin-top: 60px;
+             
+      }
+      .column{
+            width: 400px
+      }
+}
+    

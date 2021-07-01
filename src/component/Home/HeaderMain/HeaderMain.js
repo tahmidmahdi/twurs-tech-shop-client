@@ -14,7 +14,7 @@ const HeaderMain = () => {
                <div className="typewriter">
                     <Typewriter className="typewriter"
                         options={{
-                            strings: ['A store For', 'Mobile', 'Laptop', 'Keyboard', 'Mouse', 'Coffees', 'Books'],
+                            strings: ['A store For','Mobile','Laptop','Keyboard','Mouse','Coffees','Books'],
                             autoStart: true,
                             loop: true,
                         }}
