@@ -1,0 +1,14 @@
+.product-card{
+    display: flex;
+    /* margin-top: 100px; */
+    align-items: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 180px;
+    
+}
+@media only screen and (max-width: 600px) {
+    .product-card {
+      margin-left: 0px;
+    }
+  }

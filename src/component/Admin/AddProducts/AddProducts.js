@@ -18,7 +18,7 @@ const AddProducts = () => {
 
     const [axiosLink, setAxiosLink] = useState(null)
     var url = null;
-    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
         const newData = { ...data }
@@ -337,7 +337,18 @@ const AddProducts = () => {
                             <br /> <br />
                         </>
 
+
+
+
                     }
+
+
+                    <label htmlFor="quantity">Enter Product Quantity</label>
+                    <br />
+                    <input type="number" {...register("quantity", { required: true })} />
+                    <br />
+                    {errors.quantity && <span>This field is required</span>}
+                    <br /> <br />
 
                     <input className="mb-8" type="submit" />
 
