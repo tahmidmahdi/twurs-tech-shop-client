@@ -22,3 +22,25 @@
     border-radius: 15px;
     font-size: 25px
 }
+
+@media only screen and (max-width: 600px) {
+    .product-details-div {
+        flex-direction: column;
+        margin-left: 120px;
+    }
+    .modal-div{
+
+        flex-direction: column;
+        width: 400px;
+        
+    }
+    .product-details-img-modal{
+        height: 100px
+    }
+    .plus-minus-div{
+        padding: 5px  30px
+    }
+    .modal-div h1, p{
+        font-size: 15px
+    }
+}

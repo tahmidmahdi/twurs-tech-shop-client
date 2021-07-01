@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import './ProductDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 const customStyles = {
     content: {
         top: '50%',
@@ -43,7 +44,7 @@ const ProductDetails = () => {
         <div className="product-details-div">
 
 
-            <div>
+            { !modal && <div>
 
                 <CursorZoom
                     image={{
@@ -59,7 +60,7 @@ const ProductDetails = () => {
                     cursorOffset={{ x: 180, y: 80 }}
                 />
 
-            </div>
+            </div>}
 
 
             <div>
@@ -80,27 +81,32 @@ const ProductDetails = () => {
                             <div style={{ width: '400px' }}>
                                 <h1 className='text-xl font-bold tracking-widest'>{model}</h1>
                                 <br />
-
+                                <p className='text-red-500 font-bold tracking-widest'>Available quantity {quantity - plusMinus}</p>
                                 <br />
                                 <p className='text-xs'>{details}</p>
                                 <br />
+
                             </div>
                             <div className='mt-12'>
                                 <h2 className='text-3xl text-red-500 font-bold'>Price ${price} * {plusMinus}</h2>
                                 <br />
                                 <div>
                                     <h4>
-
-                                        <FontAwesomeIcon icon={faMinus} size='2x' onClick={() => setPlusMinus(plusMinus - 1)} />
-                                        {' '}  <strong className='plus-minus-div'> {plusMinus} </strong>
+                                        <FontAwesomeIcon icon={faMinus} size='2x' onClick={() => setPlusMinus(plusMinus >= 1 ? plusMinus - 1 : plusMinus)} />
+                                        {' '}  <strong className='plus-minus-div'> {plusMinus >= 0 ? plusMinus : alert('Amount Can not be negative')} </strong>
                                         <FontAwesomeIcon onClick={() => setPlusMinus(plusMinus + 1)} icon={faPlus} size='2x' />
 
                                     </h4>
                                 </div>
+                                <h1 className='mt-12 text-2xl tracking-widest font-bold text-black'>Total Price ${price * plusMinus}</h1>
+                                <button className='button mt-12'>Add To Cart</button>
                             </div>
                         </div>
+                        <button className='button' onClick={() => setModal(!modal)}>Close</button>
                     </div>
                 </Modal>
+
+
 
 
                 <h1 className="text-3xl font-bold tracking-widest	">{name}</h1>
@@ -113,7 +119,7 @@ const ProductDetails = () => {
                 <br />
                 <p className="font-bold">Available amount {quantity}</p>
                 <br />
-                <button className="button" onClick={() => setModal(true)}>View Details</button>
+                <button className="button" onClick={() => setModal(!modal)}>View Details</button>
             </div>
 
 
