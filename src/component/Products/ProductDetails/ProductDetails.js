@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { addCartAction } from '../../../Redux/Actions/addToCartAction';
 import { useContext } from 'react';
 import { emailContext } from '../../../App';
+import axios from 'axios';
 
 const customStyles = {
     content: {
@@ -66,6 +67,21 @@ const ProductDetails = () => {
                 email: email,
                 userQuantity: plusMinus
             }))
+
+
+            axios.post('http://localhost:4000/updateData', {
+                ...product,
+                quantity: product.quantity - plusMinus
+                
+            })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            
+
         }
         else{
             history.replace(from);

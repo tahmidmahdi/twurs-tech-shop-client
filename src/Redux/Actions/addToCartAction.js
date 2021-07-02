@@ -10,6 +10,9 @@ export const addCartAction = (payload) => {
           .catch(function (error) {
             console.log(error);
           });
+
+
+          
         
         dispatch({ 
             type: 'ADD_TO_CART',
