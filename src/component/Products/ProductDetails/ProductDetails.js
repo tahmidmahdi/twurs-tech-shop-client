@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import CursorZoom from 'react-cursor-zoom';
 import Modal from 'react-modal';
 import './ProductDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { addCartAction } from '../../../Redux/Actions/addToCartAction';
+import { useContext } from 'react';
+import { emailContext } from '../../../App';
 
 const customStyles = {
     content: {
@@ -21,25 +25,52 @@ const customStyles = {
 const ProductDetails = () => {
     let { e } = useParams();
 
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname:'/login' } };
+    const [email, setEmail] = useContext(emailContext)
+
     console.log(e, 'params')
 
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState()
 
     useEffect(() => {
 
         fetch(`http://localhost:4000/getProductData/` + e)
             .then(res => res.json())
-            .then(data => setProduct(data))
+            .then(data => {
+                setProduct(data[0])
+               
+            })   
+
+
+            // setProduct(data)
     }, [e])
 
 
     console.log(product)
+    console.log(`product-----`, product)
 
-    const { url, category, model, name, price, quantity, details } = product[0] || [];
+    const { url, category, model, name, price, quantity, details } = product || {};
 
     const [modal, setModal] = useState(false);
     const [plusMinus, setPlusMinus] = useState(0)
+    const dispatch = useDispatch();
 
+
+    const dispatchWithEmail = () => {
+        if(email){
+            
+            dispatch(addCartAction({
+                ...product,
+                email: email,
+                userQuantity: plusMinus
+            }))
+        }
+        else{
+            history.replace(from);
+        }
+    }
     return (
         <div className="product-details-div">
 
@@ -92,14 +123,15 @@ const ProductDetails = () => {
                                 <br />
                                 <div>
                                     <h4>
-                                        <FontAwesomeIcon icon={faMinus} size='2x' onClick={() => setPlusMinus(plusMinus >= 1 ? plusMinus - 1 : plusMinus)} />
+                                        <FontAwesomeIcon className='cursor-pointer' icon={faMinus} size='2x' onClick={() => setPlusMinus(plusMinus >= 1 ? plusMinus - 1 : plusMinus)} />
                                         {' '}  <strong className='plus-minus-div'> {plusMinus >= 0 ? plusMinus : alert('Amount Can not be negative')} </strong>
-                                        <FontAwesomeIcon onClick={() => setPlusMinus(plusMinus + 1)} icon={faPlus} size='2x' />
+                                        <FontAwesomeIcon className='cursor-pointer' onClick={() => setPlusMinus(plusMinus + 1)} icon={faPlus} size='2x' />
 
                                     </h4>
                                 </div>
+                                {/* dispatch(addCartAction(product)) */}
                                 <h1 className='mt-12 text-2xl tracking-widest font-bold text-black'>Total Price ${price * plusMinus}</h1>
-                                <button className='button mt-12'>Add To Cart</button>
+                                <button className='button mt-12 ' onClick={()=> dispatchWithEmail()}>Add To Cart</button>
                             </div>
                         </div>
                         <button className='button' onClick={() => setModal(!modal)}>Close</button>
