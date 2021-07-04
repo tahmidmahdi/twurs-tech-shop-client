@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from '../../SharedComponents/NavBar/NavBar';
 import ProductCart from '../ProductCart/ProductCart';
-import './Laptops.css'
+
 import logo from '../../../images/logobg.gif'
 
-const Laptops = () => {
+const Mobile = () => {
     const [laptops, setLaptops] = useState([])
 
     
@@ -15,7 +15,7 @@ const Laptops = () => {
             .then(products => {
                 
 
-                setLaptops(products.filter(data => data.category === 'Laptop'))
+                setLaptops(products.filter(data => data.category === 'Phone'))
 
             })
     },[])
@@ -39,4 +39,4 @@ const Laptops = () => {
     );
 };
 
-export default Laptops;
+export default Mobile;

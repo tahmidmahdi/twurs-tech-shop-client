@@ -16,6 +16,7 @@ const NavBar = () => {
                 <Link to="/keyboard">Keyboard</Link>
                 <Link to="/books">Books</Link>
                 <Link to="/coffees">Coffees</Link>
+                <Link to="/cart">Cart</Link>
                 <Link to="/login">Login</Link>
 
             </nav>

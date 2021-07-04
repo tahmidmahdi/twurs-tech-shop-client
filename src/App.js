@@ -16,7 +16,12 @@ import AdminNavBoard from './component/SharedComponents/AdminNavBoard/AdminNavBo
 import AddProducts from './component/Admin/AddProducts/AddProducts';
 import Laptops from './component/Products/Laptops/Laptops';
 import ProductDetails from './component/Products/ProductDetails/ProductDetails';
-
+import Cart from './component/Products/Cart/Cart';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute'
+import Mobile from './component/Products/Mobile/Mobile';
+import Mouse from './component/Products/Mouse/Mouse';
+import KeyBoard from './component/Products/KeyBoard/KeyBoard';
+import Checkout from './component/Products/Checkout/Checkout';
 export const emailContext = createContext()
 
 function App() {
@@ -52,11 +57,34 @@ function App() {
           <Route path='/laptop'>
             <Laptops></Laptops>
           </Route>
+
+
+          <Route path='/phone'>
+            <Mobile />
+          </Route>
+
+          <Route path='/mouse'>
+            <Mouse />
+          </Route>
+
+
+          <Route path='/keyboard'>
+            <KeyBoard />
+          </Route>
           
           <Route path='/products/:e'>
             <NavBar></NavBar>
             <ProductDetails></ProductDetails>
           </Route>
+
+          <PrivateRoute path='/cart'>
+            <NavBar />
+            <Cart />
+          </PrivateRoute>
+          <PrivateRoute path='/checkout'>
+            <NavBar />
+            <Checkout />
+          </PrivateRoute>
 
         </Switch>
       </Router>

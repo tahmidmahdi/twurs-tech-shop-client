@@ -21,6 +21,7 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
+// Modal.setAppElement('#ProductDetails');
 
 
 const ProductDetails = () => {
@@ -65,7 +66,8 @@ const ProductDetails = () => {
             dispatch(addCartAction({
                 ...product,
                 email: email,
-                userQuantity: plusMinus
+                userQuantity: plusMinus,
+                price: parseInt(product.price * plusMinus)
             }))
 
 

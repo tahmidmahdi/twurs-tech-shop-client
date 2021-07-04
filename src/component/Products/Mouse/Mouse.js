@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from '../../SharedComponents/NavBar/NavBar';
 import ProductCart from '../ProductCart/ProductCart';
-import './Laptops.css'
+
 import logo from '../../../images/logobg.gif'
 
-const Laptops = () => {
-    const [laptops, setLaptops] = useState([])
+const Mobile = () => {
+    const [products, setProducts] = useState([])
 
     
     useEffect(() => {
@@ -15,12 +15,12 @@ const Laptops = () => {
             .then(products => {
                 
 
-                setLaptops(products.filter(data => data.category === 'Laptop'))
+                setProducts(products.filter(data => data.category === 'Mouse'))
 
             })
     },[])
 
-    console.log(laptops)
+    console.log(products)
     return (
 
 
@@ -31,7 +31,7 @@ const Laptops = () => {
 
            <div className="product-card divide-x-2">
                 {
-                    laptops.map(laptop => <ProductCart product={laptop} key={laptop._id}></ProductCart>)
+                    products.map(product => <ProductCart product={product} key={product._id}></ProductCart>)
                 }
            </div>
 
@@ -39,4 +39,4 @@ const Laptops = () => {
     );
 };
 
-export default Laptops;
+export default Mobile;
