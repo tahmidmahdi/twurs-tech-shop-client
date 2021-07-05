@@ -22,6 +22,7 @@ import Mobile from './component/Products/Mobile/Mobile';
 import Mouse from './component/Products/Mouse/Mouse';
 import KeyBoard from './component/Products/KeyBoard/KeyBoard';
 import Checkout from './component/Products/Checkout/Checkout';
+import DashBoard from './component/Products/DashBoard/DashBoard';
 export const emailContext = createContext()
 
 function App() {
@@ -84,6 +85,11 @@ function App() {
           <PrivateRoute path='/checkout'>
             <NavBar />
             <Checkout />
+          </PrivateRoute>
+
+          <PrivateRoute path='/dashboard'>
+            <NavBar />
+            <DashBoard />
           </PrivateRoute>
 
         </Switch>
