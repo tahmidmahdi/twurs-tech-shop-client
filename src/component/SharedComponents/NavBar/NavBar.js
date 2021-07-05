@@ -1,10 +1,12 @@
 // import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { emailContext } from '../../../App';
 import './NavBar.css';
 
 const NavBar = () => {
+    const [email, setEmail] = useContext(emailContext)
     return (
         <div>
             <nav className="bg-gray-100">
@@ -18,6 +20,7 @@ const NavBar = () => {
                 <Link to="/coffees">Coffees</Link>
                 <Link to="/cart">Cart</Link>
                 <Link to="/login">Login</Link>
+                <Link to="/admin">Admin Dashboard</Link>
 
             </nav>
 

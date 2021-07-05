@@ -25,19 +25,19 @@ const Checkout = () => {
 
     let total = 0;
     let i = 0;
-    // cartData.map(data => {
+    cartData.map(data => {
         
-    //     total = total + parseInt(data.price)
-    cartData.total = total
+        total = total + parseInt(data.price)
+    
         
-    //     cartProduct.productName[i] = data.model
-    //     cartProduct.price_= data.price
-    //     cartProduct.noOfProduct_ = data.userQuantity;
-    //     cartProduct.image_ = data.url
-    //     i++;
+        // cartProduct.productName[i] = data.model
+        // cartProduct.price_= data.price
+        // cartProduct.noOfProduct_ = data.userQuantity;
+        // cartProduct.image_ = data.url
+        // i++;
 
 
-    // })
+    })
     console.log(cartData)
     // console.log(cartData,'cart data')
 
@@ -46,6 +46,7 @@ const Checkout = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
+        data.total = total
 
        
 
@@ -63,13 +64,20 @@ const Checkout = () => {
         // data.buyerName = data.name;
         // data.address = data.address;
         // cartData.orderBy = email
-
-        console.log(checkOutCart, 'after update')
+        // checkOutCart.total = total;
+        // checkOutCart.details = [...data, userEmail: email];
+        const newData = {
+            
+            details: [data,...checkOutCart],
+            email: email
+        }
+        // checkOutCart.user = email
+        console.log(newData, 'after update newState')
 
         
 
        
-        axios.post('http://localhost:4000/checkout/buy', checkOutCart)
+        axios.post('http://localhost:4000/checkout/buy', newData)
             .then(function (response) {
                 console.log(response);
             })
