@@ -1,12 +1,23 @@
 // import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { emailContext } from '../../../App';
+import { adminContext, emailContext } from '../../../App';
 import './NavBar.css';
 
 const NavBar = () => {
+    // const [isAdmin, setIsAdmin] = useState(false)
+    const [loggedInUser, setLoggedInUser] = useContext(adminContext)
     const [email, setEmail] = useContext(emailContext)
+
+
+    const isAdmin = !!loggedInUser.find(user => user.email === email)
+    // console.log(isAdmin, 'isAdmin')
+    const handleSignOut = () => {
+        setEmail('')
+    }
     return (
         <div>
             <nav className="bg-gray-100">
@@ -19,8 +30,19 @@ const NavBar = () => {
                 <Link to="/books">Books</Link>
                 <Link to="/coffees">Coffees</Link>
                 <Link to="/cart">Cart</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/admin">Admin Dashboard</Link>
+                {
+                    email ?
+                        <p className="text-sm font-bold">{email}</p>
+                        :
+                        <Link to="/login">Login</Link>
+
+                }
+                {
+                    email &&  
+                    <Link onClick={handleSignOut}>SignOut</Link>
+                    
+                }
+                {isAdmin && <Link to="/admin">Admin Dashboard</Link>}
 
             </nav>
 

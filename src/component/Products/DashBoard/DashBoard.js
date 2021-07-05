@@ -26,7 +26,7 @@ const DashBoard = () => {
             {/* {
                product.map(pd => <li>hello</li>)
            } */}
-           <h1 className="text-center text-3xl mt-12 tracking-widest font-bold">Your Current Orders Are</h1>
+           <h1 className="text-center text-3xl mt-12 tracking-widest">Your Current Orders Are</h1>
             <table class="border-separate border border-green-800 table-auto w-10/12 mt-8 m-auto">
                 <thead>
                     <tr className='h-20 border border-black'>
