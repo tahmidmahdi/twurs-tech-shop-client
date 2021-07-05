@@ -25,3 +25,35 @@ textarea{
     background-color: #e8f0fe
     
 }
+@media only screen and (max-width: 400px) {
+    .form-action input {
+      width: 300px;
+      margin-left: 150px
+    }
+    .form-action label{
+        margin-left: 200px;
+        font-size: 10px;
+    }
+    textarea{
+        width: 300px;
+        margin-left: 150px
+    }
+    
+  }
+
+  @media only screen and (max-width: 700px) {
+    .form-action input {
+      width: 300px;
+      margin-left: 150px
+    }
+    .form-action label{
+        margin-left: 200px;
+        font-size: 10px;
+    }
+    textarea{
+        width: 300px;
+        margin-left: 150px
+    }
+    
+  }
+  

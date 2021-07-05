@@ -117,7 +117,7 @@ function App() {
             </PrivateRoute>
   
             <PrivateRoute path='/makeAdmin'>
-  
+              <AdminNavBoard />
               <MakeAnAdmin />
             </PrivateRoute>
   

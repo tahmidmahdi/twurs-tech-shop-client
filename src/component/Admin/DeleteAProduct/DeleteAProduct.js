@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import DeleteAProductCart from '../DeleteAProductCart/DeleteAProductCart';
+import './DeleteAProduct.css'
 // import AdminNavBoard from '../../SharedComponents/AdminNavBoard/AdminNavBoard'
 const DeleteAProduct = () => {
 
@@ -24,7 +25,7 @@ const DeleteAProduct = () => {
     console.log(products)
     return (
         <div className='content'>
-           <div className='flex justify-around flex-wrap ml-12'>
+           <div className='flex justify-around flex-wrap deleteProduct'>
                {
                    products.map(product => <DeleteAProductCart product={product}></DeleteAProductCart>)
                }

@@ -161,8 +161,8 @@ const AddProducts = () => {
 
     return (
         <div>
-            <div className="form-action ">
-                <h1 className="text-5xl text-center mb-8 tracking-widest">Add A Products</h1>
+            <div className="form-action content">
+                <h1 className="lg:text-5xl text-center mb-8 tracking-widest sm:text-xl">Add A Products</h1>
 
 
                 <form className="form-action text-center" onSubmit={handleSubmit(onSubmit)}>
@@ -235,7 +235,7 @@ const AddProducts = () => {
 
                     <label htmlFor="">Enter Product Image</label>
                     <br />
-                    <input onChange={(e) => handleSelect(e)} type="file" name="" id="" />
+                    <input className='img-input' onChange={(e) => handleSelect(e)} type="file" name="" id="" />
                     <br /> <br />
                     {
                         axiosLink && <p className="text-green-400">{axiosLink}</p>

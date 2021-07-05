@@ -1,4 +1,44 @@
 .makeanadmin-form{
-    margin-left: 800px;
+    margin-left: 700px;
     
 }
+.makeanadmin-form input[type=submit]:hover {
+    background-color: aqua !important ;
+}
+@media only screen and (max-width: 400px) {
+    .makeanadmin-form {
+        margin-left: 50px !important;
+
+        
+    }
+    .makeanadmin-form input{
+        /* margin-left: 40px; */
+        width: 250px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .makeanadmin-form {
+        margin-left: 80px !important;
+
+        
+    }
+    .makeanadmin-form input{
+        /* margin-left: 40px; */
+        width: 250px;
+    }
+  }
+
+@media only screen and (max-width: 750px) {
+    .makeanadmin-form {
+        margin-left: 0px !important;
+
+        
+    }
+    .makeanadmin-form input{
+        /* margin-left: 40px; */
+        width: 350px;
+    }
+    .makeadmin-heading{
+        margin-left: -50px
+    }
+  }

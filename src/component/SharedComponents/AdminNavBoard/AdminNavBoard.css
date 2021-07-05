@@ -33,7 +33,7 @@
     height: 1000px;
   }
   
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     .sidebar {
       width: 100%;
       height: auto;
@@ -43,11 +43,13 @@
     div.content {margin-left: 0;}
   }
   
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 300px) {
     .sidebar a {
       text-align: center;
       float: none;
     }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
   }
 
 
