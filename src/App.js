@@ -25,6 +25,7 @@ import Checkout from './component/Products/Checkout/Checkout';
 import DashBoard from './component/Products/DashBoard/DashBoard';
 import MakeAnAdmin from './component/Admin/MakeAnAdmin/MakeAnAdmin';
 import axios from 'axios';
+import DeleteAProduct from './component/Admin/DeleteAProduct/DeleteAProduct';
 export const emailContext = createContext()
 export const adminContext = createContext()
 
@@ -72,6 +73,10 @@ function App() {
             <Route path='/addProduct'>
               <AdminNavBoard></AdminNavBoard>
               <AddProducts></AddProducts>
+            </Route>
+            <Route path='/delete'>
+              <AdminNavBoard></AdminNavBoard>
+              <DeleteAProduct />
             </Route>
   
             <Route path='/laptop'>
