@@ -8,6 +8,7 @@ import './Checkout.css'
 const Checkout = () => {
     const [email, setEmail] = useContext(emailContext)
     const [cartData, setCartData] = useState([])
+    const [cartProduct, setCartProduct] = useState([])
     useEffect(() => {
         axios.get(`http://localhost:4000/cartByEmail/` + email)
             .then(function (response) {
@@ -23,12 +24,21 @@ const Checkout = () => {
     }, [email])
 
     let total = 0;
-    cartData.map(data => {
-        total = total + parseInt(data.price)
-        cartData.totalPrice = total
+    let i = 0;
+    // cartData.map(data => {
+        
+    //     total = total + parseInt(data.price)
+    cartData.total = total
+        
+    //     cartProduct.productName[i] = data.model
+    //     cartProduct.price_= data.price
+    //     cartProduct.noOfProduct_ = data.userQuantity;
+    //     cartProduct.image_ = data.url
+    //     i++;
 
-    })
-    console.log(total)
+
+    // })
+    console.log(cartData)
     // console.log(cartData,'cart data')
 
 
@@ -42,19 +52,24 @@ const Checkout = () => {
         // const newData = {
         //     // ...cartData,
         //     deliveryInfo: data,
-        //     orderBy: email
+        //     orderBy: email,
+            
         // }
 
-        cartData.buyerName = data.name;
-        cartData.address = data.address;
-        cartData.orderBy = email
+        const checkOutCart = cartData.map(product => {
+            return {model: product.model, quantity: product.userQuantity, url: product.url}   
+        })
 
-        console.log(cartData, 'after update')
+        // data.buyerName = data.name;
+        // data.address = data.address;
+        // cartData.orderBy = email
+
+        console.log(checkOutCart, 'after update')
 
         
 
-        console.log(cartData)
-        axios.post('http://localhost:4000/checkout/buy', cartData)
+       
+        axios.post('http://localhost:4000/checkout/buy', checkOutCart)
             .then(function (response) {
                 console.log(response);
             })
