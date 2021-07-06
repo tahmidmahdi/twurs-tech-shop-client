@@ -8,7 +8,7 @@ import './Checkout.css'
 const Checkout = () => {
     const [email, setEmail] = useContext(emailContext)
     const [cartData, setCartData] = useState([])
-    const [cartProduct, setCartProduct] = useState([])
+    // const [cartProduct, setCartProduct] = useState([])
     useEffect(() => {
         axios.get(`http://localhost:4000/cartByEmail/` + email)
             .then(function (response) {
@@ -24,22 +24,13 @@ const Checkout = () => {
     }, [email])
 
     let total = 0;
-    let i = 0;
-    cartData.map(data => {
-        
-        total = total + parseInt(data.price)
     
-        
-        // cartProduct.productName[i] = data.model
-        // cartProduct.price_= data.price
-        // cartProduct.noOfProduct_ = data.userQuantity;
-        // cartProduct.image_ = data.url
-        // i++;
 
-
+    //this map function is to get the total price
+    cartData.map(data => {  
+        total = total + parseInt(data.price)
     })
     console.log(cartData)
-    // console.log(cartData,'cart data')
 
 
 

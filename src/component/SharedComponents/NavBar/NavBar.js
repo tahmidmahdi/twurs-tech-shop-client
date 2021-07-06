@@ -12,12 +12,11 @@ const NavBar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(adminContext)
     const [email, setEmail] = useContext(emailContext)
 
+    
 
     const isAdmin = !!loggedInUser.find(user => user.email === email)
-    // console.log(isAdmin, 'isAdmin')
-    const handleSignOut = () => {
-        setEmail('')
-    }
+    
+    
     return (
         <div>
             <nav className="bg-gray-100">
@@ -39,7 +38,7 @@ const NavBar = () => {
                 }
                 {
                     email &&  
-                    <Link onClick={handleSignOut}>SignOut</Link>
+                    <Link onClick={()=> setEmail('')}>SignOut</Link>
                     
                 }
                 {isAdmin && <Link to="/admin">Admin Dashboard</Link>}

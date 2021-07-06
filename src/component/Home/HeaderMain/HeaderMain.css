@@ -52,4 +52,51 @@
             width: 400px
       }
 }
+@media only screen and (max-width: 800px) {
+      .column h1 {
+         width: 800px;
+         /* background-color: cyan; */
+      }
+      .column p {
+          width: 500px;
+          
+      }
+
+      .main-img{
+            height: 340px;
+            /* width: 500px */
+            border: 1px solid black;
+            margin-top: 60px;
+            margin-left: -10px
+             
+      }
+      .column{
+            width: 800px
+      }
+}
+@media only screen and (max-width: 400px) {
+      .column h1 {
+         width: 250px;
+         font-size: 22px;
+         /* background-color: cyan; */
+      }
+      .column p {
+          width: 200px;
+          
+          
+      }
+
+      .main-img{
+            height: 250px;
+            /* width: 500px */
+            border: 1px solid black;
+            /* margin-top: 60px; */
+            margin-left: -40px;
+            width: 60%
+             
+      }
+      .column{
+            width: 600px
+      }
+}
     

@@ -36,4 +36,17 @@
     }
     
   }
-  
+
+  @media only screen and (max-width: 400px) {
+    .header-text{
+        font-size: 22px
+    }
+    
+  }
+
+  @media only screen and (max-width: 800px) {
+    .service {
+        flex-direction: column
+    }
+    
+  }

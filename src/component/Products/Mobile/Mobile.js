@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from '../../SharedComponents/NavBar/NavBar';
 import ProductCart from '../ProductCart/ProductCart';
-
+import './Mobile.css'
 import logo from '../../../images/logobg.gif'
 
 const Mobile = () => {
-    const [laptops, setLaptops] = useState([])
+    const [products, setProducts] = useState([])
 
     
     useEffect(() => {
@@ -15,12 +15,12 @@ const Mobile = () => {
             .then(products => {
                 
 
-                setLaptops(products.filter(data => data.category === 'Phone'))
+                setProducts(products.filter(data => data.category === 'Phone'))
 
             })
     },[])
 
-    console.log(laptops)
+    console.log(products)
     return (
 
 
@@ -31,7 +31,7 @@ const Mobile = () => {
 
            <div className="product-card divide-x-2">
                 {
-                    laptops.map(laptop => <ProductCart product={laptop} key={laptop._id}></ProductCart>)
+                    products.map(mobile => <ProductCart product={mobile} key={mobile._id}></ProductCart>)
                 }
            </div>
 

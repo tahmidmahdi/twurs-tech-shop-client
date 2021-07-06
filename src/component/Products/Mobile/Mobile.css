@@ -1,0 +1,13 @@
+@media only screen and (max-width: 800px) {
+    .product-card {
+        /* margin-left: 80px */
+        /* margin: auto; */
+        margin-right: 40px
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .product-card {
+        margin:40px 0px 0px 0px
+    }
+  }

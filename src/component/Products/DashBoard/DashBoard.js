@@ -19,8 +19,7 @@ const DashBoard = () => {
     }, [email])
     // console.log(orderedProduct)
     const product = orderedProduct.filter(pd => pd.model != undefined)
-    console.log(product, 'filtered result')
-    console.log(orderedProduct, 'ordered products')
+    
     return (
         <div>
             {/* {

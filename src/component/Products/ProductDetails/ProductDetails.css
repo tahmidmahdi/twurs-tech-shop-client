@@ -23,6 +23,48 @@
     font-size: 25px
 }
 
+
+@media only screen and (max-width: 400px) {
+    .product-details-div {
+        flex-direction: column;
+        margin-left: 60px !important;
+        /* margin: auto; */
+        width: 300px
+    }
+    .product-details-div h1,p,h2,h3{
+        font-size: 12px;
+        
+        width: 300px;
+        
+    }
+    .product-details-div img{
+        width: 50%
+    }
+    .modal-div{
+
+        flex-direction: column;
+        width: 300px;
+        /* overflow-x: hidden; */
+        margin-left: 80px
+        
+    }
+    .modal-div h1,h2, h3,h4{
+        font-size: 10px !important;
+        /* word-wrap: break-word !important; */
+        /* white-space: initial !important; */
+        overflow-wrap: break-word !important;
+
+    }
+    .product-details-img-modal{
+        height: 80px !important
+    }
+    .plus-minus-div{
+        padding: 5px  30px
+    }
+    .modal-div h1, p{
+        font-size: 10px 
+    }
+}
 @media only screen and (max-width: 600px) {
     .product-details-div {
         flex-direction: column;
@@ -43,4 +85,32 @@
     .modal-div h1, p{
         font-size: 15px
     }
+}
+@media only screen and (max-width: 800px) {
+    
+    .product-details-div {
+        flex-direction: row !important;
+        margin-left: 180px;
+    }
+    .modal-div{
+
+        flex-direction: column;
+        width: 500px;
+        
+        
+    }
+    .product-details-img-modal{
+        height: 200px
+    }
+    .plus-minus-div{
+        padding: 5px  30px
+    }
+    .modal-div h1, p{
+        font-size: 15px
+    }
+    .modal-div button{
+        margin-bottom: 15px
+    }
+
+    
 }

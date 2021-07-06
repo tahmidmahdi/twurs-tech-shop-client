@@ -25,37 +25,48 @@ const customStyles = {
 
 
 const ProductDetails = () => {
+
+
+    // this state handles to carry if a modal is true or false and the product value itself
+    const [productDetails, setProductDetails] = useState({
+
+        modal: false,
+        product: [],
+    })
+
+
+    // react router params to get a specific value find by id
     let { e } = useParams();
 
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname:'/login' } };
+
+
+    // this is a context api state, to pass the value who logged in 
     const [email, setEmail] = useContext(emailContext)
 
-    console.log(e, 'params')
+    
 
-    const [product, setProduct] = useState()
+   
 
     useEffect(() => {
-
+        // we have gathered the specific product data by finding through id here
         fetch(`http://localhost:4000/getProductData/` + e)
             .then(res => res.json())
             .then(data => {
-                setProduct(data[0])
+                
+                setProductDetails({...productDetails, product: data[0]})
                
             })   
 
-
-            // setProduct(data)
     }, [e])
 
+   
 
-    console.log(product)
-    console.log(`product-----`, product)
+    const { url, category, model, name, price, quantity, details } = productDetails.product || {};
 
-    const { url, category, model, name, price, quantity, details } = product || {};
-
-    const [modal, setModal] = useState(false);
+    // const [modal, setModal] = useState(false);
     const [plusMinus, setPlusMinus] = useState(0)
     const dispatch = useDispatch();
 
@@ -64,16 +75,18 @@ const ProductDetails = () => {
         if(email){
             
             dispatch(addCartAction({
-                ...product,
+                ...productDetails.product,
                 email: email,
                 userQuantity: plusMinus,
-                price: parseInt(product.price * plusMinus)
+                price: parseInt(productDetails.product.price * plusMinus)
             }))
 
+            
 
+            //here we have update the quantity of a product
             axios.post('http://localhost:4000/updateData', {
-                ...product,
-                quantity: product.quantity - plusMinus
+                ...productDetails.product,
+                quantity: productDetails.product.quantity - plusMinus
                 
             })
               .then(function (response) {
@@ -93,7 +106,7 @@ const ProductDetails = () => {
         <div className="product-details-div">
 
 
-            { !modal && <div>
+            { !productDetails.modal && <div>
 
                 <CursorZoom
                     image={{
@@ -115,7 +128,7 @@ const ProductDetails = () => {
             <div>
 
                 <Modal
-                    isOpen={modal}
+                    isOpen={productDetails.modal}
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
@@ -152,14 +165,14 @@ const ProductDetails = () => {
                                 <button className='button mt-12 ' onClick={()=> dispatchWithEmail()}>Add To Cart</button>
                             </div>
                         </div>
-                        <button className='button' onClick={() => setModal(!modal)}>Close</button>
+                        <button className='button' onClick={() => setProductDetails({...productDetails, modal: !productDetails.modal})}>Close</button>
                     </div>
                 </Modal>
 
 
 
 
-                <h1 className="text-3xl font-bold tracking-widest	">{name}</h1>
+                <h1 className="text-3xl font-bold tracking-widest">{name}</h1>
                 <br />
                 <p className="text-gray-400">{category}</p>
                 <br />
@@ -169,7 +182,8 @@ const ProductDetails = () => {
                 <br />
                 <p className="font-bold">Available amount {quantity}</p>
                 <br />
-                <button className="button" onClick={() => setModal(!modal)}>View Details</button>
+                <button className="button" onClick={() =>  setProductDetails({...productDetails, modal: !productDetails.modal})} >View Details</button>
+                {/* setModal(!modal) */}
             </div>
 
 
