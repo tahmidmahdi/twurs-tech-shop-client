@@ -10,7 +10,7 @@ const Checkout = () => {
     const [cartData, setCartData] = useState([])
     // const [cartProduct, setCartProduct] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:4000/cartByEmail/` + email)
+        axios.get(`https://radiant-escarpment-25711.herokuapp.com/cartByEmail/` + email)
             .then(function (response) {
                 console.log(response);
                 setCartData(response.data)
@@ -63,7 +63,7 @@ const Checkout = () => {
         
 
        //in this rest api portion I have done posting the successful purchase data
-        axios.post('http://localhost:4000/checkout/buy', newData)
+        axios.post('https://radiant-escarpment-25711.herokuapp.com/checkout/buy', newData)
             .then(function (response) {
                 console.log(response);
             })

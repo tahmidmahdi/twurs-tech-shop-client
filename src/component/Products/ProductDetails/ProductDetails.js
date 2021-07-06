@@ -52,7 +52,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         // we have gathered the specific product data by finding through id here
-        fetch(`http://localhost:4000/getProductData/` + e)
+        fetch(`https://radiant-escarpment-25711.herokuapp.com/getProductData/` + e)
             .then(res => res.json())
             .then(data => {
                 
@@ -84,7 +84,7 @@ const ProductDetails = () => {
             
 
             //here we have update the quantity of a product
-            axios.post('http://localhost:4000/updateData', {
+            axios.post('https://radiant-escarpment-25711.herokuapp.com/updateData', {
                 ...productDetails.product,
                 quantity: productDetails.product.quantity - plusMinus
                 

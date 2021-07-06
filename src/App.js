@@ -34,7 +34,7 @@ function App() {
   const [email, setEmail] = useState(null)
   const [loggedInUser, setLoggedInUser] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:4000/adminList')
+    axios.get('https://radiant-escarpment-25711.herokuapp.com/adminList')
       .then(function (response) {
         setLoggedInUser(response.data)
       })

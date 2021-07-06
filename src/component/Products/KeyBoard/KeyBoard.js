@@ -9,7 +9,7 @@ const KeyBoard = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/allProducts`)
+        fetch(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
             .then(res => res.json())
             .then(products => {
                 setProducts(products.filter(data => data.category === 'Keyboard'))

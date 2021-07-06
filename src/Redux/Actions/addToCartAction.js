@@ -3,7 +3,7 @@ import axios from "axios";
 export const addCartAction = (payload) => {
   return async (dispatch, getState) => {
 
-    axios.post('http://localhost:4000/cartData', payload)
+    axios.post('https://radiant-escarpment-25711.herokuapp.com/cartData', payload)
       .then(function (response) {
         console.log(response);
       })

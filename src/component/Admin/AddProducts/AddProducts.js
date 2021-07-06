@@ -26,7 +26,7 @@ const AddProducts = () => {
 
 
 
-        axios.post('http://localhost:4000/addProduct', newData)
+        axios.post('https://radiant-escarpment-25711.herokuapp.com/addProduct', newData)
             .then(function (response) {
                 console.log(response);
 
@@ -53,7 +53,8 @@ const AddProducts = () => {
                 // console.log(response.data.data.display_url);
                 url = response.data.data.display_url;
                 console.log(url)
-                setAxiosLink(url)
+                // setAxiosLink(url)
+                setProduct({...product, axiosURL: url})
 
             })
             .catch(function (error) {
@@ -81,6 +82,7 @@ const AddProducts = () => {
         },
         category: null,
         checkbox: '',
+        axiosURL: ''
     })
 
 
@@ -246,7 +248,7 @@ const AddProducts = () => {
                     <input className='img-input' onChange={(e) => handleSelect(e)} type="file" name="" id="" />
                     <br /> <br />
                     {
-                        axiosLink && <p className="text-green-400">{axiosLink}</p>
+                        product.axiosURL && <p className="text-green-400">{product.axiosURL}</p>
                     }
                     <br /> <br />
 

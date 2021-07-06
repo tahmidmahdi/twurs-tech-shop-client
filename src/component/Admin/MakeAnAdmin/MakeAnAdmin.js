@@ -9,7 +9,7 @@ const MakeAnAdmin = () => {
         const email = data.email
 
 
-        axios.post(`http://localhost:4000/makeAnAdmin`,data)
+        axios.post(`https://radiant-escarpment-25711.herokuapp.com/makeAnAdmin`,data)
           .then(function (response) {
             console.log(response);
           })

@@ -28,9 +28,9 @@
     }
   }
 
-@media only screen and (max-width: 750px) {
+@media all and (max-width: 780px) and (min-width: 750px) {
     .makeanadmin-form {
-        margin-left: 0px !important;
+        margin-left: 160px !important;
 
         
     }

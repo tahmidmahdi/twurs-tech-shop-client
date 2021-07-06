@@ -28,32 +28,60 @@ textarea{
 @media only screen and (max-width: 400px) {
     .form-action input {
       width: 300px;
-      margin-left: 150px
+      margin-left: 50px !important
     }
+
     .form-action label{
-        margin-left: 200px;
+        margin-left: 0px;
         font-size: 10px;
     }
+
     textarea{
         width: 300px;
-        margin-left: 150px
+        margin-left: 0px !important;
+    }
+    .img-input{
+        width: 300px !important
     }
     
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 770px) {
     .form-action input {
-      width: 300px;
-      margin-left: 150px
+      width: 700px;
+      margin-left: 0px !important
     }
     .form-action label{
-        margin-left: 200px;
+        margin-left: 0px !important;
         font-size: 10px;
     }
+    .form-action h1{
+        margin-left: 180px;
+    }
     textarea{
-        width: 300px;
-        margin-left: 150px
+        width: 700px;
+        margin-left: 0px !important
     }
     
   }
-  
+  @media only screen and (max-width: 600px) {
+    .form-action{
+        text-align: center;
+    }
+    .form-action input {
+      width: 300px;
+      margin-left: 0px !important
+    }
+    .form-action label{
+        margin-left: 0px !important;
+        font-size: 15px;
+    }
+    textarea{
+        width: 300px;
+        margin-left: 0px!important
+    }
+    .form-action h1{
+        margin: 0px;
+    }
+    
+  }

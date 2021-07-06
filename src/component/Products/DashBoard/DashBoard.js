@@ -8,7 +8,7 @@ const DashBoard = () => {
     const [email, setEmail] = useContext(emailContext)
     const [orderedProduct, setOrderedProduct] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:4000/dashboard/` + email)
+        axios.get(`https://radiant-escarpment-25711.herokuapp.com/dashboard/` + email)
             .then(function (response) {
                 setOrderedProduct(response.data[0].details);
             })

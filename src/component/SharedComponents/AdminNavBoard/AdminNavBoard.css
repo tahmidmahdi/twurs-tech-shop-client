@@ -33,7 +33,8 @@
     height: 1000px;
   }
   
-  @media screen and (max-width: 800px) {
+  
+  @media screen and (max-width: 770px) {
     .sidebar {
       width: 100%;
       height: auto;
@@ -43,15 +44,14 @@
     div.content {margin-left: 0;}
   }
   
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 400px) {
     .sidebar a {
       text-align: center;
       float: none;
     }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+    
+    /* div.content {margin-left: 0;} */
   }
-
 
 
   .form-action input{

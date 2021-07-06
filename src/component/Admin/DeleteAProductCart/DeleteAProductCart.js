@@ -4,7 +4,9 @@ import React from 'react';
 const DeleteAProductCart = ({ product }) => {
     const handleClick = (e) => {
         const id = e._id
-        axios.post(`http://localhost:4000/deleteProduct`,{id})
+
+        //deleting product through id
+        axios.post(`https://radiant-escarpment-25711.herokuapp.com/deleteProduct`,{id})
           .then(function (response) {
             console.log(response);
           })

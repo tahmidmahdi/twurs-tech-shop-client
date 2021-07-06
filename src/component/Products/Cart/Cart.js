@@ -12,10 +12,8 @@ const Cart = () => {
     const [cartData, setCartData] = useState([])
     useEffect(() => {
 
-        // fetch(`http://localhost:4000/cartByEmail/`+email)
-        // .then(res => res.json())
-        // .then(data => setCartData(data))
-        axios.get(`http://localhost:4000/cartByEmail/` + email)
+       
+        axios.get(`https://radiant-escarpment-25711.herokuapp.com/cartByEmail/` + email)
             .then(function (response) {
                 console.log(response);
                 setCartData(response.data)
@@ -28,6 +26,7 @@ const Cart = () => {
             });
 
     }, [email])
+
 
     const history = useHistory()
     const handleClick = () => {

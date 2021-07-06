@@ -9,7 +9,7 @@ const DeleteAProduct = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/allProducts`)
+        axios.get(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
         .then(function (response) {
             // handle success
             setProducts(response.data);
