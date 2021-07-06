@@ -19,32 +19,53 @@ const NavBar = () => {
     
     return (
         <div>
-            <nav className="bg-gray-100">
-
-                <Link className="active text-black" to="/">Twurs Tech Shop</Link>
-                <Link to="/phone">Phone</Link>
-                <Link to="/mouse">Mouse</Link>
-                <Link to="/laptop">Laptop</Link>
-                <Link to="/keyboard">Keyboard</Link>
-                <Link to="/books">Books</Link>
-                <Link to="/coffees">Coffees</Link>
-                <Link to="/cart">Cart</Link>
-                {
-                    email ?
-                        <p className="text-sm font-bold">{email}</p>
-                        :
-                        <Link to="/login">Login</Link>
-
-                }
-                {
-                    email &&  
-                    <Link onClick={()=> setEmail('')}>SignOut</Link>
-                    
-                }
-                {isAdmin && <Link to="/admin">Admin Dashboard</Link>}
-
+            {/* <div>
+                <nav className="bg-gray-100">
+    
+                    <Link className="active text-black" to="/">Twurs Tech Shop</Link>
+                    <Link to="/phone">Phone</Link>
+                    <Link to="/mouse">Mouse</Link>
+                    <Link to="/laptop">Laptop</Link>
+                    <Link to="/keyboard">Keyboard</Link>
+                    <Link to="/books">Books</Link>
+                    <Link to="/coffees">Coffees</Link>
+                    <Link to="/cart">Cart</Link>
+                    {
+                        email ?
+                            <p className="text-sm font-bold">{email}</p>
+                            :
+                            <Link to="/login">Login</Link>
+    
+                    }
+                    {
+                        email &&  
+                        <Link onClick={()=> setEmail('')}>SignOut</Link>
+                        
+                    }
+                    {isAdmin && <Link to="/admin">Admin Dashboard</Link>}
+    
+                </nav>
+    
+            </div> */}
+            <nav className='flex justify-around items-center'>
+                <div className=''>
+                    <Link to='/' className="text-xl">Home</Link>
+                </div>
+                <div >
+                    <Link to='/phone'>Mobile</Link>
+                    <Link to='/laptop'>Laptop</Link>
+                    <Link to='/keyboard'>Keyboard</Link>
+                    <Link to='/mouse'>Mouse</Link>
+                    <Link to='/books'>Books</Link>
+                    <Link to='/coffee'>Coffee</Link>
+                </div>
+                <div>
+                    { email && !isAdmin ?  <Link className='text-red-600'>{email}</Link> : <Link to='/login'>Login</Link>}
+                    { email && <Link onClick={()=> setEmail('')}>Sign Out</Link> }
+                    { email && <Link to='/cart'>Cart</Link>}
+                    { isAdmin && <Link to="/admin">Admin Dashboard</Link> }
+                </div>
             </nav>
-
         </div>
     );
 };
