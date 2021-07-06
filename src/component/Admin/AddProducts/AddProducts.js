@@ -19,7 +19,9 @@ const AddProducts = () => {
         newData.url = axiosLink;
         newData.date = new Date();
         newData.category = product.category;
-        newData.details = checkbox;
+        newData.details = product.checkbox;
+
+
 
 
 
@@ -64,8 +66,7 @@ const AddProducts = () => {
     }
 
 
-    
-
+    // it is a state to contain multiple values of different products
     const [product, setProduct] = useState({
         laptop: {
             isLaptop: 'Laptop',
@@ -78,24 +79,25 @@ const AddProducts = () => {
             firstCharge: false,
             waterProof: false,
         },
-        category: null
+        category: null,
+        checkbox: '',
     })
 
 
-    
+
 
     console.log(product.laptop)
 
-    const [checkbox, setCheckBox] = useState('')
+  
 
 
 
 
     const handleChange = (e) => {
-        console.log(e.target.value)
+        // in this section we will set the category of a product and corresponding to the category we will set some value as true and false
 
         if (e.target.value === 'laptop') {
-          
+
             setProduct({
                 ...product, laptop: {
                     ram: !product.laptop.ram,
@@ -108,16 +110,16 @@ const AddProducts = () => {
                 category: 'Laptop'
             })
 
-           
 
-            console.log(product, '-------------from laptop')
+
+            // console.log(product, '-------------from laptop')
         }
 
 
         if (e.target.value === 'phone') {
 
 
-         
+
             setProduct({
                 ...product,
                 phone: {
@@ -131,36 +133,36 @@ const AddProducts = () => {
                 category: 'Phone'
             })
 
-           
+
         }
 
         if (e.target.value === 'mouse') {
-            
-            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Mouse' })
-            
+
+            setProduct({ ...product, laptop: { ram: false }, phone: { firstCharge: false }, category: 'Mouse' })
+
         }
 
         if (e.target.value === 'keyboard') {
-            
-            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Keyboard' })
+
+            setProduct({ ...product, laptop: { ram: false }, phone: { firstCharge: false }, category: 'Keyboard' })
         }
 
         if (e.target.value === 'books') {
-            
-            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Books' })
+
+            setProduct({ ...product, laptop: { ram: false }, phone: { firstCharge: false }, category: 'Books' })
         }
 
         if (e.target.value === 'coffee') {
-            
-            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Coffee' })
+
+            setProduct({ ...product, laptop: { ram: false }, phone: { firstCharge: false }, category: 'Coffee' })
         }
 
 
     }
 
     const handleBlur = (e) => {
-        console.log(e.target.value)
-        setCheckBox(e.target.value)
+       
+        setProduct({...product, checkbox : e.target.value})
     }
 
 
@@ -251,7 +253,7 @@ const AddProducts = () => {
 
 
 
-                   
+
 
 
 
@@ -274,7 +276,7 @@ const AddProducts = () => {
                     <br /> <br />
 
 
-
+                    {/* it only shows when we clicked on the category as laptop. When we clicked then the ram is set to be true then it will show us the option to set ram, rom and ssd */}
                     {
                         product?.laptop?.ram &&
 
@@ -305,16 +307,13 @@ const AddProducts = () => {
                             <br /> <br />
 
                         </>
-
-
-
-
-
-
-
                     }
 
 
+
+
+
+                    {/* this section will only show when we set our category as phone.  */}
                     {
 
                         product?.phone?.waterProof &&
@@ -337,9 +336,6 @@ const AddProducts = () => {
                             {errors.waterProof && <span>This field is required</span>}
                             <br /> <br />
                         </>
-
-
-
 
                     }
 
