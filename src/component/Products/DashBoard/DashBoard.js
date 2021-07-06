@@ -17,14 +17,12 @@ const DashBoard = () => {
             });
 
     }, [email])
-    // console.log(orderedProduct)
-    const product = orderedProduct.filter(pd => pd.model != undefined)
+    
+    const product = orderedProduct.filter(pd => pd.model !== undefined)
     
     return (
         <div>
-            {/* {
-               product.map(pd => <li>hello</li>)
-           } */}
+            
            <h1 className="text-center text-3xl mt-12 tracking-widest">Your Current Orders Are</h1>
             <table class="border-separate border border-green-800 table-auto w-10/12 mt-8 m-auto">
                 <thead>
