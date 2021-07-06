@@ -36,38 +36,33 @@ const Checkout = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+
+        //adding total value with form data
         console.log(data)
         data.total = total
 
        
 
-        // const newData = {
-        //     // ...cartData,
-        //     deliveryInfo: data,
-        //     orderBy: email,
-            
-        // }
-
+      
+        //making an array of object with some specific value that i need to make a order collection
         const checkOutCart = cartData.map(product => {
             return {model: product.model, quantity: product.userQuantity, url: product.url}   
         })
 
-        // data.buyerName = data.name;
-        // data.address = data.address;
-        // cartData.orderBy = email
-        // checkOutCart.total = total;
-        // checkOutCart.details = [...data, userEmail: email];
+
+
+        //in the newData i have added the form data, specified products data with email 
         const newData = {
-            
             details: [data,...checkOutCart],
             email: email
         }
-        // checkOutCart.user = email
-        console.log(newData, 'after update newState')
+        
+
+        // console.log(newData, 'after update newState')
 
         
 
-       
+       //in this rest api portion I have done posting the successful purchase data
         axios.post('http://localhost:4000/checkout/buy', newData)
             .then(function (response) {
                 console.log(response);

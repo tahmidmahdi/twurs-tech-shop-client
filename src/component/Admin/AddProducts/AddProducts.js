@@ -5,13 +5,7 @@ import { useState } from 'react';
 import './AddProducts.css'
 const AddProducts = () => {
 
-    // const [options, setOptions] = useState({
-    //     ram: null,
-    //     rom: null,
-    //     isSSD: null,
-    //     isSugar: false,
 
-    // })
 
 
 
@@ -24,7 +18,7 @@ const AddProducts = () => {
         const newData = { ...data }
         newData.url = axiosLink;
         newData.date = new Date();
-        newData.category = category;
+        newData.category = product.category;
         newData.details = checkbox;
 
 
@@ -70,23 +64,27 @@ const AddProducts = () => {
     }
 
 
-    const [category, setCategory] = useState(null)
+    
 
-    const [laptop, setLaptop] = useState({
-        isLaptop: 'Laptop',
-        ram: null,
-        rom: null,
-        isSSD: false,
+    const [product, setProduct] = useState({
+        laptop: {
+            isLaptop: 'Laptop',
+            ram: false,
+            rom: false,
+            isSSD: false,
+        },
+        phone: {
+
+            firstCharge: false,
+            waterProof: false,
+        },
+        category: null
     })
 
 
-    const [phone, setPhone] = useState({
+    
 
-        firstCharge: false,
-        waterProof: false,
-    })
-
-    console.log(laptop)
+    console.log(product.laptop)
 
     const [checkbox, setCheckBox] = useState('')
 
@@ -97,56 +95,64 @@ const AddProducts = () => {
         console.log(e.target.value)
 
         if (e.target.value === 'laptop') {
-            setLaptop({
-                ...laptop,
-                ram: !laptop.ram,
-                rom: !laptop.rom,
-                isSSD: !laptop.isSSD,
+          
+            setProduct({
+                ...product, laptop: {
+                    ram: !product.laptop.ram,
+                    rom: !product.laptop.rom,
+                    isSSD: !product.laptop.isSSD
+                },
+                phone: {
+                    firstCharge: false,
+                },
+                category: 'Laptop'
             })
 
-            setCategory('Laptop')
+           
 
-            console.log(laptop)
+            console.log(product, '-------------from laptop')
         }
 
 
         if (e.target.value === 'phone') {
 
 
-            setPhone({
-                ...phone,
-                firstCharge: !phone.firstCharge,
-                waterProof: !phone.waterProof,
+         
+            setProduct({
+                ...product,
+                phone: {
+                    firstCharge: !product.phone.firstCharge,
+                    waterProof: !product.phone.waterProof,
+                },
 
+                laptop: {
+                    ram: false
+                },
+                category: 'Phone'
             })
 
-            setCategory('Phone')
-
-            setLaptop(!laptop.ram)
+           
         }
 
         if (e.target.value === 'mouse') {
-            setCategory('Mouse')
-            setLaptop(!laptop.ram)
-            setPhone(!phone.firstCharge)
+            
+            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Mouse' })
+            
         }
 
         if (e.target.value === 'keyboard') {
-            setCategory('Keyboard')
-            setLaptop(!laptop.ram)
-            setPhone(!phone.firstCharge)
+            
+            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Keyboard' })
         }
 
         if (e.target.value === 'books') {
-            setCategory('Books')
-            setLaptop(!laptop.ram)
-            setPhone(!phone.firstCharge)
+            
+            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Books' })
         }
 
         if (e.target.value === 'coffee') {
-            setCategory('Coffee')
-            setLaptop(!laptop.ram)
-            setPhone(!phone.firstCharge)
+            
+            setProduct({ ...product, laptop: { ram: false }, phone: {firstCharge: false}, category: 'Coffee' })
         }
 
 
@@ -168,7 +174,7 @@ const AddProducts = () => {
                 <form className="form-action text-center" onSubmit={handleSubmit(onSubmit)}>
 
 
-                    {category === 'Books' && <>
+                    {product.category === 'Books' && <>
 
                         <label htmlFor="booksName">Enter Books Name</label>
                         <br />
@@ -189,7 +195,7 @@ const AddProducts = () => {
 
 
 
-                    {category !== 'Books' && <>
+                    {product.category !== 'Books' && <>
                         <label htmlFor="name">Enter Product Brand Name</label>
                         <br />
                         <input {...register("name", { required: true })} />
@@ -245,12 +251,7 @@ const AddProducts = () => {
 
 
 
-                    {/* <label htmlFor="details">Enter Product Details</label>
-                    <br />
-                    <input className="input-div" {...register("details", { required: true })} />
-                    <br />
-                    {errors.details && <span>This field is required</span>}
-                    <br /> <br /> */}
+                   
 
 
 
@@ -275,7 +276,7 @@ const AddProducts = () => {
 
 
                     {
-                        laptop.ram &&
+                        product?.laptop?.ram &&
 
                         <>
                             <label htmlFor="ram">Ram (in GB)</label>
@@ -316,7 +317,7 @@ const AddProducts = () => {
 
                     {
 
-                        phone.waterProof &&
+                        product?.phone?.waterProof &&
 
 
                         <>
@@ -357,33 +358,6 @@ const AddProducts = () => {
                 </form>
             </div>
 
-
-
-
-
-            {/* <form className='text-center' onSubmit={handleSubmit} >
-
-               <label htmlFor="brand">Enter Brand Name</label>
-               <br />
-               <input onBlur={handleBlur} type="text" name="brand" id=""  required/>
-               <br /> <br />
-
-               <label htmlFor="product">Enter Product Name</label>
-               <br />
-               <input type="text" name="product" id=""  required/>
-               <br /> <br />
-
-               <label htmlFor="price">Enter Product Price</label>
-               <br />
-               <input type="number" name="price" id=""  required/>
-               <br /> <br />
-
-                <label htmlFor="description">Enter Description</label>
-                <br />
-                <textarea name="description" id="" cols="30" rows="10"></textarea>
-                <br /> <br />
-                <input type="submit" value="Submit" />
-            </form> */}
         </div>
 
     );
