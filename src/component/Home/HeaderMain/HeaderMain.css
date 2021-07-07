@@ -90,29 +90,32 @@
 }
 
 
-@media all  and (max-width: 770px) and (min-width: 700px){
+@media all  and (max-width: 800px) and (min-width: 750px){
       .column h1 {
          /* width: 770px; */
          /* background-color: cyan; */
          text-align: center;
-         margin-left: -80px;
+         margin-left: 70px;
          
       }
       .column p {
             /* background-color: cyan; */
             text-align: center;
-            margin-left: -80px;
+            margin-left: 78px;
           
       }
       .column button{
             margin-left: 200px;
+      }
+      .typewriter{
+            margin-left: 80px;
       }
       .main-img{
             height: 340px;
             /* width: 500px */
             border: 1px solid black;
             margin-top: 60px;
-            margin-left: 0px
+            margin-left: 95px
              
       }
       .column{

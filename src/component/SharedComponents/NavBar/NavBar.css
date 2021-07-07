@@ -95,7 +95,7 @@ nav a:hover{
       /* height: 150px; */
       flex-wrap: wrap;
       flex-direction: column;
-      margin: 20px -55px !important;
+      margin: 20px 50px !important;
     }
     
     nav a{
