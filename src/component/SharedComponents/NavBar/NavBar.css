@@ -49,9 +49,13 @@ nav a:hover{
     nav {
       /* background-color: lightblue; */
       width: 400px;
+      height: 150px;
       flex-wrap: wrap;
-      flex-direction: column;
-      margin: 20px -30px !important;
+      flex-direction: column !important;
+      margin: 20px 0px 0px -10px !important;
+    }
+    nav a img{
+      width: 70px !important
     }
     
     nav a{
@@ -68,6 +72,7 @@ nav a:hover{
     nav {
       /* background-color: lightblue; */
       width: 500px;
+      /* height: 150px; */
       flex-wrap: wrap;
       flex-direction: column;
       margin: 20px 20px
@@ -87,6 +92,7 @@ nav a:hover{
     nav {
       /* background-color: lightblue; */
       width: 800px;
+      /* height: 150px; */
       flex-wrap: wrap;
       flex-direction: column;
       margin: 20px -55px !important;

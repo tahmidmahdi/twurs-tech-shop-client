@@ -49,7 +49,7 @@ const NavBar = () => {
             </div> */}
             <nav className='flex justify-around items-center'>
                 <div className=''>
-                    <Link to='/' className="text-xl"><img style={{width:'190px'}} src={logo} alt="" /></Link>
+                    <Link to='/' ><img style={{width:'190px'}} src={logo} alt="" /></Link>
                 </div>
                 <div >
                     <Link to='/phone'>Mobile</Link>
