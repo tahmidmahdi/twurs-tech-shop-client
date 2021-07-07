@@ -1,3 +1,20 @@
 .adminDashboard{
-    
+    margin-left: 450px !important
 }
+
+@media all and (max-width: 800px) and (min-width: 750px) {
+    .adminDashboard {
+        margin-left: 180px !important;
+    }
+  }
+
+  @media all and (max-width: 400px) and (min-width: 350px) {
+    .adminDashboard {
+        margin-left: 10px !important;
+    }
+}
+     @media all and (max-width: 600px) and (min-width: 550px) {
+        .adminDashboard {
+            margin-left: 60px !important;
+        }
+      }
