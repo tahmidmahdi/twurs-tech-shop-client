@@ -47,17 +47,18 @@
   @media only screen and (max-width: 800px) {
     .service {
         flex-direction: column;
-        margin-left: 200px;
+        margin-left: 100px;
     }
     .header-text{
-        margin-left: 200px
+        margin-left: 150px
     }
     .service-h1{
-        margin-left: 200px;
+        margin-left: 150px;
     }
     .service-image{
-        margin-left: 220px;
+        margin-left: 150px;
         width: 70%
     }
+    
     
   }

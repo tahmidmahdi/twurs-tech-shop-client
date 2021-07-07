@@ -95,27 +95,27 @@
          /* width: 770px; */
          /* background-color: cyan; */
          text-align: center;
-         margin-left: 70px;
+         margin-left: 0px;
          
       }
       .column p {
             /* background-color: cyan; */
             text-align: center;
-            margin-left: 78px;
+            margin-left: 0px;
           
       }
       .column button{
             margin-left: 200px;
       }
       .typewriter{
-            margin-left: 80px;
+            margin-left: 40px;
       }
       .main-img{
             height: 340px;
             /* width: 500px */
             border: 1px solid black;
             margin-top: 60px;
-            margin-left: 95px
+            margin-left: 35px
              
       }
       .column{
