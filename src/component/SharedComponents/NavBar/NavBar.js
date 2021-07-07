@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { adminContext, emailContext } from '../../../App';
 import './NavBar.css';
-
+import logo from '../../../images/logobg.gif'
 const NavBar = () => {
     // const [isAdmin, setIsAdmin] = useState(false)
     const [loggedInUser, setLoggedInUser] = useContext(adminContext)
@@ -49,7 +49,7 @@ const NavBar = () => {
             </div> */}
             <nav className='flex justify-around items-center'>
                 <div className=''>
-                    <Link to='/' className="text-xl">Home</Link>
+                    <Link to='/' className="text-xl"><img style={{width:'190px'}} src={logo} alt="" /></Link>
                 </div>
                 <div >
                     <Link to='/phone'>Mobile</Link>
