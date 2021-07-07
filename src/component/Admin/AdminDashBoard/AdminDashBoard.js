@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import AdminDashBoardCart from '../AdminDashBoardCart/AdminDashBoardCart';
+import './AdminDashBoard.css'
 
 const AdminDashBoard = () => {
     const [products, setProducts] = useState([])
@@ -8,7 +10,7 @@ const AdminDashBoard = () => {
         axios.get(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
             .then(function (response) {
                 // handle success
-                console.log(response);
+                setProducts(response.data);
             })
             .catch(function (error) {
                 // handle error
@@ -18,9 +20,12 @@ const AdminDashBoard = () => {
                 // always executed
             });
     }, [])
+    console.log(products)
     return (
-        <div>
-
+        <div className=" adminDashboard product-card divide-x-2 ">
+            {
+                products.map(product => <AdminDashBoardCart product={product} key={product._id} ></AdminDashBoardCart>)
+            }
         </div>
     );
 };

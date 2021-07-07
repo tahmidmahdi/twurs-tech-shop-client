@@ -28,6 +28,7 @@ import axios from 'axios';
 import DeleteAProduct from './component/Admin/DeleteAProduct/DeleteAProduct';
 import Coffee from './component/Products/Coffee/Coffee';
 import Books from './component/Products/Books/Books';
+import AdminDashBoard from './component/Admin/AdminDashBoard/AdminDashBoard';
 export const emailContext = createContext()
 export const adminContext = createContext()
 
@@ -69,6 +70,7 @@ function App() {
   
             <Route path='/admin'>
               <AdminNavBoard></AdminNavBoard>
+              <AdminDashBoard />
             </Route>
   
   

@@ -1,4 +1,6 @@
-
+.deleteProduct{
+    margin-left: 210px
+}
 @media only screen and (max-width: 400px) {
     .deleteProduct{
         margin-left: -100px
@@ -8,9 +10,9 @@
     }
   }
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 800px) {
     .deleteProduct{
-        margin-left: -0px
+        margin-left: 140px
     }
     .button{
         width: 200px
