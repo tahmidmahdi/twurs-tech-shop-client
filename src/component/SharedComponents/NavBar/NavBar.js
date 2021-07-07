@@ -60,8 +60,8 @@ const NavBar = () => {
                     <Link to='/coffee'>Coffee</Link>
                 </div>
                 <div>
-                    { email && !isAdmin ?  <Link className='text-red-600'>{email}</Link> : <Link to='/login'>Login</Link>}
-                    { email && <Link onClick={()=> setEmail('')}>Sign Out</Link> }
+                    { email && !isAdmin ? <Link className='text-red-600 animate-pulse '>{email}</Link> : <Link to='/login'>Login</Link>}
+                    { email && <Link className='text-red-600 animate-pulse ' onClick={()=> setEmail('')}>Sign Out</Link> }
                     { email && <Link to='/cart'>Cart</Link>}
                     { isAdmin && <Link to="/admin">Admin Dashboard</Link> }
                 </div>

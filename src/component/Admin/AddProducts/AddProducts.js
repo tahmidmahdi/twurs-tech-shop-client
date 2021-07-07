@@ -10,13 +10,13 @@ const AddProducts = () => {
 
 
 
-    const [axiosLink, setAxiosLink] = useState(null)
+    // const [axiosLink, setAxiosLink] = useState(null)
     var url = null;
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
         const newData = { ...data }
-        newData.url = axiosLink;
+        newData.url = product.axiosURL;
         newData.date = new Date();
         newData.category = product.category;
         newData.details = product.checkbox;
@@ -180,18 +180,18 @@ const AddProducts = () => {
 
                     {product.category === 'Books' && <>
 
-                        <label htmlFor="booksName">Enter Books Name</label>
+                        <label htmlFor="name">Enter Books Name</label>
                         <br />
-                        <input {...register("booksName", { required: true })} />
+                        <input {...register("name", { required: true })} />
                         <br />
-                        {errors.booksName && <span >This field is required</span>}
+                        {errors.name && <span >This field is required</span>}
                         <br /> <br />
 
-                        <label htmlFor="author">Enter Books Author Name</label>
+                        <label htmlFor="model">Enter Books Author Name</label>
                         <br />
-                        <input {...register("author", { required: true })} />
+                        <input {...register("model", { required: true })} />
                         <br />
-                        {errors.author && <span >This field is required</span>}
+                        {errors.model && <span >This field is required</span>}
                         <br /> <br />
 
 

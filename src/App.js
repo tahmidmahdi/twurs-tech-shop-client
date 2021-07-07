@@ -26,6 +26,7 @@ import DashBoard from './component/Products/DashBoard/DashBoard';
 import MakeAnAdmin from './component/Admin/MakeAnAdmin/MakeAnAdmin';
 import axios from 'axios';
 import DeleteAProduct from './component/Admin/DeleteAProduct/DeleteAProduct';
+import Coffee from './component/Products/Coffee/Coffee';
 export const emailContext = createContext()
 export const adminContext = createContext()
 
@@ -95,6 +96,10 @@ function App() {
   
             <Route path='/keyboard'>
               <KeyBoard />
+            </Route>
+
+            <Route path='/coffee'>
+              <Coffee />
             </Route>
   
             <Route path='/products/:e'>
