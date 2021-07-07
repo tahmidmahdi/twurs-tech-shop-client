@@ -37,14 +37,21 @@
     
   }
 
-  @media only screen and (max-width: 400px) {
+  @media all and (max-width: 400px) and (min-width: 350px) {
     .header-text{
         font-size: 22px
+    }
+    .service{
+        margin-left: 100px;
+    }
+    .service-image{
+        margin-left: 120px;
+        width: 70%
     }
     
   }
 
-  @media only screen and (max-width: 800px) {
+  @media all and (max-width: 800px) and (min-width: 750px) {
     .service {
         flex-direction: column;
         margin-left: 100px;
