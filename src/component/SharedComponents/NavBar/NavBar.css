@@ -51,7 +51,7 @@ nav a:hover{
       width: 400px;
       flex-wrap: wrap;
       flex-direction: column;
-      margin: 20px -60px !important;
+      margin: 20px -30px !important;
     }
     
     nav a{
@@ -64,7 +64,7 @@ nav a:hover{
     }
 
   }
-@media only screen and (max-width: 600px) {
+@media all and (max-width: 600px) and (min-width: 550px) {
     nav {
       /* background-color: lightblue; */
       width: 500px;
@@ -83,13 +83,13 @@ nav a:hover{
     }
 
   }
-  @media only screen and (max-width: 800px) {
+  @media all and (max-width: 800px) and (min-width: 750px) {
     nav {
       /* background-color: lightblue; */
       width: 800px;
       flex-wrap: wrap;
       flex-direction: column;
-      margin: 20px 25px !important;
+      margin: 20px -55px !important;
     }
     
     nav a{
