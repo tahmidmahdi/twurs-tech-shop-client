@@ -27,6 +27,7 @@ import MakeAnAdmin from './component/Admin/MakeAnAdmin/MakeAnAdmin';
 import axios from 'axios';
 import DeleteAProduct from './component/Admin/DeleteAProduct/DeleteAProduct';
 import Coffee from './component/Products/Coffee/Coffee';
+import Books from './component/Products/Books/Books';
 export const emailContext = createContext()
 export const adminContext = createContext()
 
@@ -100,6 +101,9 @@ function App() {
 
             <Route path='/coffee'>
               <Coffee />
+            </Route>
+            <Route path='/books'>
+              <Books />
             </Route>
   
             <Route path='/products/:e'>
