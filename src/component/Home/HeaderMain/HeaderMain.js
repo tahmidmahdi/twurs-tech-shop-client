@@ -6,10 +6,12 @@ import img from '../../../images/img1.jpg'
 import { useHistory } from 'react-router-dom';
 
 const HeaderMain = () => {
+
+
     const history = useHistory()
-    const handleClick = () => {
-        history.push('/laptop')
-    }
+    
+
+
     return (
         <div className="row">
             <div className="column">
@@ -26,7 +28,7 @@ const HeaderMain = () => {
                         }}
                     />
 
-                    <button className="mt-12 ml-5 bg-green-500 button" onClick={handleClick}>Start Shopping Today</button>
+                    <button className="mt-12 ml-5 bg-green-500 button" onClick={()=> history.push('/laptop')}>Start Shopping Today</button>
                </div>
 
             </div>

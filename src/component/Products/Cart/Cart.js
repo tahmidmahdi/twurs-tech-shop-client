@@ -29,9 +29,7 @@ const Cart = () => {
 
 
     const history = useHistory()
-    const handleClick = () => {
-        history.push('/checkout')
-    }
+    
     console.log(cartData, 'from cartData')
 
     let total = 0;
@@ -55,7 +53,7 @@ const Cart = () => {
 
             <p className='text-center text-2xl tracking-widest font-bold text-red-600'>Total Cost : {total}</p>
             <div className='flex justify-center mt-12'>
-                <button className='button' onClick={handleClick}>Proceed To Checkout</button>
+                <button className='button' onClick={()=> history.push('/checkout')}>Proceed To Checkout</button>
             </div>
         </div>
        
