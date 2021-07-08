@@ -11,6 +11,8 @@ import { useContext } from 'react';
 import { emailContext } from '../../../App';
 import axios from 'axios';
 
+
+//  modal design 
 const customStyles = {
     content: {
         top: '50%',
@@ -21,7 +23,7 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
-// Modal.setAppElement('#ProductDetails');
+
 
 
 const ProductDetails = () => {
@@ -66,7 +68,7 @@ const ProductDetails = () => {
 
     const { url, category, model, name, price, quantity, details } = productDetails.product || {};
 
-    // const [modal, setModal] = useState(false);
+    
     const [plusMinus, setPlusMinus] = useState(0)
     const dispatch = useDispatch();
 
@@ -74,6 +76,7 @@ const ProductDetails = () => {
     const dispatchWithEmail = () => {
         if(email){
             
+            // save data in redux
             dispatch(addCartAction({
                 ...productDetails.product,
                 email: email,
@@ -99,13 +102,15 @@ const ProductDetails = () => {
 
         }
         else{
+
+            // if email is not found then redirect the user to login pannel
             history.replace(from);
         }
     }
     return (
         <div className="product-details-div">
 
-
+            {/* when modal is true the modal will come up  and the cursor zoom will not work*/}
             { !productDetails.modal && <div>
 
                 <CursorZoom
@@ -160,7 +165,7 @@ const ProductDetails = () => {
 
                                     </h4>
                                 </div>
-                                {/* dispatch(addCartAction(product)) */}
+                                
                                 <h1 className='mt-12 text-2xl tracking-widest font-bold text-black'>Total Price ${price * plusMinus}</h1>
                                 <button className='button mt-12 ' onClick={()=> dispatchWithEmail()}>Add To Cart</button>
                             </div>
@@ -183,7 +188,7 @@ const ProductDetails = () => {
                 <p className="font-bold">Available amount {quantity}</p>
                 <br />
                 <button className="button" onClick={() =>  setProductDetails({...productDetails, modal: !productDetails.modal})} >View Details</button>
-                {/* setModal(!modal) */}
+                
             </div>
 
 

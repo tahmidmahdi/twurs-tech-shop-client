@@ -8,6 +8,7 @@ import logo from '../../../images/logobg.gif'
 const KeyBoard = () => {
     const [products, setProducts] = useState([])
 
+    //  we have fatched our all product from database
     useEffect(() => {
         fetch(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
             .then(res => res.json())

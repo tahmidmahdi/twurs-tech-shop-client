@@ -8,13 +8,13 @@ import logo from '../../../images/logobg.gif'
 const Laptops = () => {
     const [laptops, setLaptops] = useState([])
 
-    
+    //  we have fatched our all product from database
     useEffect(() => {
         fetch(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
             .then(res => res.json())
             .then(products => {
                 
-
+                //  then I have filtered the product by category name
                 setLaptops(products.filter(data => data.category === 'Laptop'))
 
             })

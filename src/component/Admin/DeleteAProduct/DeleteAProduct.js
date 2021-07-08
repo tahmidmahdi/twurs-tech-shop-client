@@ -3,11 +3,13 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import DeleteAProductCart from '../DeleteAProductCart/DeleteAProductCart';
 import './DeleteAProduct.css'
-// import AdminNavBoard from '../../SharedComponents/AdminNavBoard/AdminNavBoard'
+
 const DeleteAProduct = () => {
 
     const [products, setProducts] = useState([])
 
+
+    // to get all product list
     useEffect(() => {
         axios.get(`https://radiant-escarpment-25711.herokuapp.com/allProducts`)
         .then(function (response) {
@@ -22,7 +24,9 @@ const DeleteAProduct = () => {
             // always executed
           });
     },[])
-    console.log(products)
+    
+
+
     return (
         <div className='content'>
            <div className='flex justify-around flex-wrap deleteProduct'>

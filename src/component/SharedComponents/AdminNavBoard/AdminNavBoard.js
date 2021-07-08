@@ -5,7 +5,7 @@ import './AdminNavBoard.css';
 const DashBoard = () => {
 
     return (
-
+        //  this section is for the sidebar option for admin
         <div>
             <div className="sidebar ">
                 <Link className="active" to='/admin'>Dashboard</Link>

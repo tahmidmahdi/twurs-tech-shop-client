@@ -1,17 +1,15 @@
 import React from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
-// import firebaseConfig from './firebase.config';
 import { useContext, useState } from 'react';
 import "./Login.css"
 import { emailContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { Link } from 'react-router-dom';
 import firebaseConfig from './firabase.config';
-// import logos from '../../logos/Group 1329.png'
 
+// to initialize config file 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
@@ -25,10 +23,10 @@ function App() {
 
 
     const [email, setEmail] = useContext(emailContext)
-    console.log('email of', email);
+    
 
 
-
+    //  state that contains user all info
     const [user, setUser] = useState({
         name: "",
         email: "",
@@ -48,11 +46,16 @@ function App() {
         let isValid = false;
         if (e.target.name === 'email') {
 
+
+            //  in this part we have to check our our email is valid or not through regex
             isValid = /\S+@\S+\.\S+/.test(e.target.value)
 
         }
         if (e.target.name === 'password') {
+
+            // checks the password length is more than 6 character
             const passLength = e.target.value.length > 6;
+            // in this section we checks if the password has at least one numeric value
             const passCheck = /\d{1}/.test(e.target.value);
             isValid = passLength && passCheck;
 

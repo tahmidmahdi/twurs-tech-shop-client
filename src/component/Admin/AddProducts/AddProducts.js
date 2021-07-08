@@ -10,11 +10,13 @@ const AddProducts = () => {
 
 
 
-    // const [axiosLink, setAxiosLink] = useState(null)
+   
     var url = null;
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+
+
+        // destructure the data and then add extra property in it
         const newData = { ...data }
         newData.url = product.axiosURL;
         newData.date = new Date();
@@ -25,7 +27,7 @@ const AddProducts = () => {
 
 
 
-
+        //  to add a product in database
         axios.post('https://radiant-escarpment-25711.herokuapp.com/addProduct', newData)
             .then(function (response) {
                 console.log(response);
@@ -43,7 +45,9 @@ const AddProducts = () => {
 
 
     const handleSelect = (e) => {
-        // console.log(e.target.files[0])
+       
+        //to upload image in imgbb
+        
         const form = new FormData();
         form.set('key', 'd5c178daff730a82d11eaf1d08f8994b')
         form.append('image', e.target.files[0])
@@ -114,7 +118,7 @@ const AddProducts = () => {
 
 
 
-            // console.log(product, '-------------from laptop')
+            
         }
 
 

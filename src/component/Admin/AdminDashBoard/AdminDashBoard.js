@@ -20,7 +20,7 @@ const AdminDashBoard = () => {
                 // always executed
             });
     }, [])
-    console.log(products)
+    
     return (
         <div className=" adminDashboard product-card divide-x-2 ">
             {

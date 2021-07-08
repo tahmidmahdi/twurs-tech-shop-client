@@ -36,6 +36,8 @@ const Services = () => {
                 
             </div>
             <img className=' service-image mb-12 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110' src={img2} alt="" />
+
+            <footer className='text-center mb-8 tracking-widest'>© Copyright 2021 Twurs Tech Shop. All rights are reserved</footer>
         </div>
     );
 };
