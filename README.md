@@ -1,7 +1,7 @@
 # Twurs-Tech-Shop
 
 ### `NETLIFY LIVE SITE LINK`
-[LiveSite](http://twurs-tech-shop.netlify.app/he) --click to view Live Site
+[LiveSite](http://twurs-tech-shop.netlify.app/) --click to view Live Site
 
 
 
