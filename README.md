@@ -6,4 +6,4 @@
 
 
 ### `Heroku LIVE SITE LINK`
-[LiveSite](https://radiant-escarpment-25711.herokuapp.com/) --click to know about my server site
+[LiveSite](https://radiant-escarpment-25711.herokuapp.com/) --deployment link of my server site
